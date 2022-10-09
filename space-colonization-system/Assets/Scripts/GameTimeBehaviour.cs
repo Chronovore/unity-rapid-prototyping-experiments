@@ -22,6 +22,12 @@ public class GameTimeBehaviour : MonoBehaviour
     public string[] monthNames;
 
     private GameDateService _gameDateService;
+
+    public void SetSpeed(float speed)
+    {
+        isPaused = speed < float.Epsilon;
+        gameTimeMultiplier = speed;
+    }
     
     private void Start()
     {
