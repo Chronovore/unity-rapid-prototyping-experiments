@@ -1,7 +1,4 @@
-# This .gitignore file should be placed at the root of your Unity project directory
-#
-# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
-#
+# Hide unity folders for all projects
 /*/[Ll]ibrary/
 /*/[Tt]emp/
 /*/[Oo]bj/
@@ -58,3 +55,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Unity user settings
+/*/UserSettings/
+
+# Custom Library uneccessary files
+/*/CustomLibraries/*/bin/
+/*/CustomLibraries/*/obj/
