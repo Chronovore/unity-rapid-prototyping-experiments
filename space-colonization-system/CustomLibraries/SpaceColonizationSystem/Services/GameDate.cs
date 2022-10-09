@@ -14,4 +14,24 @@ namespace SpaceColonizationSystem.Services
             Year = year;
         }
     }
+
+    public class FullGameDate
+    {
+        public int DayOfMonth { get; }
+        public string DayName { get; } = string.Empty;
+        public string MonthName { get; } = string.Empty;
+        public int Year { get; }
+
+        public FullGameDate()
+        {
+        }
+
+        public FullGameDate(int dayOfMonth, string dayName, string monthName, int year)
+        {
+            DayOfMonth = dayOfMonth;
+            DayName = dayName;
+            MonthName = monthName;
+            Year = year;
+        }
+    }
 }

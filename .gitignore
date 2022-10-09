@@ -55,6 +55,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Unity user settings
+/*/UserSettings/
+
 # Custom Library uneccessary files
 /*/CustomLibraries/*/bin/
 /*/CustomLibraries/*/obj/
