@@ -19,3 +19,4 @@ Visualization of trade and settlements              | 7     | 2     | 5     | 10
 Display an indicator of game time
 Display a selector of of multiple game time speeds (1x, 2x, 4x, 8x)
 Controls the passage of game time
+Pausing the game pauses time passage
