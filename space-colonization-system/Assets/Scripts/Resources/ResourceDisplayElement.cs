@@ -1,14 +1,18 @@
+using Data.GameResources;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ResourceDisplayElement : MonoBehaviour
+namespace Resources
 {
-    public ResourceData data;
-    public RawImage iconElement;
-
-    public void SetData(ResourceData resource)
+    public class ResourceDisplayElement : MonoBehaviour
     {
-        data = resource;
-        iconElement.texture = resource.icon.texture;
+        public ResourceData data;
+        public RawImage iconElement;
+
+        public void SetData(ResourceData resource)
+        {
+            data = resource;
+            iconElement.texture = resource.icon.texture;
+        }
     }
 }

@@ -1,11 +1,11 @@
-using Resources;
+using CelestialBodies;
 using UnityEditor;
 using UnityEngine;
 
 namespace Editor
 {
-    [CustomEditor(typeof(ResourceSystemBehaviour))]
-    public class ResourceSystemEditor : UnityEditor.Editor
+    [CustomEditor(typeof(SolarSystemBehaviour))]
+    public class SolarSystemEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
@@ -13,7 +13,7 @@ namespace Editor
 
             if (GUILayout.Button("Save"))
             {
-                ((ResourceSystemBehaviour) target).UpdateResources();
+                ((SolarSystemBehaviour) target).UpdateSolarSystem();
             }
         }
     }

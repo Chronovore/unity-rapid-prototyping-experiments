@@ -1,34 +1,39 @@
 using System.Linq;
+using Data.GameResources;
 using UnityEngine;
 
-public class ResourceSystemBehaviour : MonoBehaviour
+namespace Resources
 {
-
-    public GameObject resourceBarContainer;
-    public ResourceDisplayElement resourceDisplayElementPrefab;
-
-    public ResourceData[] resourceDataList;
-
-    private void Start()
+    public class ResourceSystemBehaviour : MonoBehaviour
     {
-        UpdateResources();
-    }
 
-    public void UpdateResources()
-    {
-        foreach (var child in resourceBarContainer.transform.Cast<Transform>().ToList())
+        public GameObject resourceBarContainer;
+        public ResourceDisplayElement resourceDisplayElementPrefab;
+
+        public ResourceData[] resourceDataList;
+
+        private void Start()
         {
-            #if UNITY_EDITOR
-                DestroyImmediate(child.gameObject);
-            #else
-                Destroy(child.gameObject);
-            #endif
+            UpdateResources();
         }
 
-        foreach (var resource in resourceDataList)
+        public void UpdateResources()
         {
-            var newResourceItem = Instantiate(resourceDisplayElementPrefab, resourceBarContainer.transform);
-            newResourceItem.GetComponent<ResourceDisplayElement>().SetData(resource);
+            foreach (var child in resourceBarContainer.transform.Cast<Transform>().ToList())
+            {
+#if UNITY_EDITOR
+                DestroyImmediate(child.gameObject);
+#else
+                Destroy(child.gameObject);
+#endif
+            }
+
+            foreach (var resource in resourceDataList)
+            {
+                var newResourceItem = Instantiate(resourceDisplayElementPrefab, resourceBarContainer.transform);
+                newResourceItem.transform.position = Vector3.zero;
+                newResourceItem.GetComponent<ResourceDisplayElement>().SetData(resource);
+            }
         }
     }
 }
